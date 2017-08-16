@@ -1,0 +1,21 @@
+# cfmid_botha1_cluster
+When you change CONFIG.pm, please change it 
+in wraper_docker.pl too. 
+
+1. For booting up all the images in all the nodes,
+   /home/prion/cfm_id/bin/boot_images_nodes.sh
+
+2. Before use the cluster, check all the docker images are up in all the nodes.
+   /home/prion/cfm_id/bin/chech_images_nodes.sh
+
+3. run commamd to do the job
+  perl /home/prion/cfm_id/bin/call_wraper_qsub.pl  <absolute_file_path>
+  Note: <absolute_file_path> is the file in csv formt delimited by tab,
+	      first column of the file is HMDB id, second column is compound
+				in Inch format or SMILE format.
+  Example: perl call_wraper_qsub.pl ../inputs/test.tsv
+
+4. Output files are in /home/prion/cfm_id/outputs. There are 3 sub directories
+   for positive, negative, ei.
+
+
